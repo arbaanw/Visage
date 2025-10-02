@@ -11,8 +11,8 @@ img = Image.open(img_path)
 
 img_matrix = np.array(img)
 
-brightness_value = 50
-contrast_value = 1.2
+brightness_value = 100
+contrast_value = 2.2
 
 bright_img_matrix = bright.adjust_brightness(img_matrix, brightness_value)
 contrast_img_matrx = contrast.adjust_contrast(img_matrix, contrast_value)
