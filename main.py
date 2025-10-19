@@ -7,6 +7,8 @@ import services.inversion as inversion
 import services.thresholding as thresholding
 import services.blurring as blurring
 import services.edge_detection as edge
+import services.sharpening as sharpening
+
 
 current_file_directory = Path(__file__).resolve().parent
 img_path = current_file_directory / "assets" / "mona_lisa"
@@ -24,6 +26,7 @@ inversion_img_matrix = inversion.effect_inversion(img_matrix)
 thresholding_img_matrix = thresholding.effect_thresholding(img_matrix)
 blurring_img_matrix = blurring.effect_blurring(img_matrix)
 edge_img_matrix = edge.effect_edge_detection(img_matrix)
+sharp_img_matrix = sharpening.effect_sharpening(img_matrix)
 
 
 bright_img = Image.fromarray(bright_img_matrix)
@@ -32,6 +35,7 @@ inversion_img = Image.fromarray(inversion_img_matrix)
 thresholding_img = Image.fromarray(thresholding_img_matrix)
 blurring_img = Image.fromarray(blurring_img_matrix)
 edge_img = Image.fromarray(edge_img_matrix)
+sharp_img = Image.fromarray(sharp_img_matrix)
 
 
 bright_img.save("results/bright_result.png")
@@ -40,3 +44,4 @@ inversion_img.save("results/inversion_result.png")
 thresholding_img.save("results/thresholding_result.png")
 blurring_img.save("results/blurring_result.png")
 edge_img.save("results/edge_detection_result.png")
+sharp_img.save("results/sharpening_result.png")
